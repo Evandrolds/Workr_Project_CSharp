@@ -23,6 +23,10 @@ namespace WorkerProject.Entities
                 "\n Hour (s) " + Hours +
                 "\n Value per hour: $ " + ValuePerHour.ToString("F2", CultureInfo.InvariantCulture);
         }
+        public double TotalValue()
+        {
+            return ValuePerHour * Hours;
+        }
        
     }
 }

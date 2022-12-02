@@ -40,6 +40,19 @@ class Worker
             Contracts.Remove(contract);
         }
     }
+    public double Income(int year, int month)
+    {
+        double sun = BaseSalary;
+        foreach (HourContract obj in Contracts)
+        {
+            if (obj.Date.Year == year && obj.Date.Month == month)
+            {
+                sun += obj.TotalValue();
+
+            }
+        }
+        return sun;
+    }
 
 
 }

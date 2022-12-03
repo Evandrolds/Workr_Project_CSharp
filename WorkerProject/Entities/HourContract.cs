@@ -8,13 +8,16 @@ namespace WorkerProject.Entities
         public double ValuePerHour { get; set; }
         public int Hours { get; set; }
         public DateTime Date { get; set; }
-       
 
-        public HourContract(double valuePerHour, int hours, DateTime date)
+        public HourContract()
         {
-            ValuePerHour = valuePerHour;
-            Hours = hours;
+        }
+
+        public HourContract(DateTime date,  int hours, double valuePerHour)
+        {
             Date = date;
+            Hours = hours;
+            ValuePerHour = valuePerHour;
         }
         override
         public string ToString()
@@ -25,7 +28,7 @@ namespace WorkerProject.Entities
         }
         public double TotalValue()
         {
-            return ValuePerHour * Hours;
+            return Hours * ValuePerHour;
         }
        
     }
